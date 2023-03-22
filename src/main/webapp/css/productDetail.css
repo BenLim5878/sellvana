@@ -1,0 +1,419 @@
+.product-detail-description-content-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.5891px;
+    line-height: 30px;
+    color: #2D3748;
+    padding: 26px 0px;
+}
+
+.product-detail-description-header-sellvana h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22.6484px;
+    color: #2D3748;
+}
+
+.product-detail-description-header-sellvana{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding-bottom: 26px;
+    border-bottom: 1px #CBD5E0 solid;
+}
+
+.product-detail-description-created-by-container-sellvana{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:9px;
+}
+
+.product-detail-description-created-by-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.4125px;
+    color: #718096;
+}
+
+.product-detail-description-seller-container-sellvana h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.4125px;
+    color: #7E31CE;
+}
+
+.product-detail-description-seller-container-sellvana img{
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.product-detail-description-seller-container-sellvana{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:9px;
+}
+
+.product-rating-card-content-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.8925px;
+    color: #222222;
+    line-height: 30px;
+    margin-top:20px;
+}
+
+.product-rating-card-header-sellvana{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.small-ratings{
+    display: flex;
+    flex-direction: row !important;
+}
+
+.product-rating-card-header-left-sellvana div{
+    display:flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.product-rating-card-header-username-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.8925px;
+    color: #222222;
+}
+
+.product-rating-card-header-createdDate-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.406px;
+    color: #717171;
+}
+
+.product-rating-card-header-left-sellvana img{
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.product-rating-card-header-left-sellvana{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-detail-rating-content-sellvana{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 70px;
+}
+
+.product-detail-rating-sellvana{
+    display: flex;
+    flex-direction: column;
+    border-top:1px #DDDDDD solid;
+    padding-top: 50px;
+}
+
+.product-detail-rating-header-sellvana{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+
+.product-detail-rating-header-description-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #4C4C4C;
+}
+
+.select-box__current{
+    border: 1px solid #E2E8F0;
+    border-radius: 6.52969px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.product-detail-input-content-sellvana{
+    margin-top: 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8.70625px;
+    display: flex;
+    flex-direction: column;
+    width: 425px;
+    padding: 20px;
+    gap:25px;
+}
+
+.product-detail-card-header-rating-sellvana i{
+    font-size: 15px !important;
+}
+
+.product-detail-card-header-rating-sellvana h5{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D3748;
+}
+
+.product-detail-card-header-rating-sellvana{
+    margin-top:5px;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 13px;
+}
+
+.product-detail-card-header-price-sellvana h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.5891px;
+    color: #718096;
+
+}
+
+.add-to-cart-button-sellvana-disabled{
+    cursor: default !important;
+    background-color: grey !important;
+}
+
+.product-detail-card-header-price-sellvana h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    color: #2D3748;
+}
+
+.product-detail-card-header-price-sellvana{
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 5px;
+}
+
+.product-detail-card-header-sellvana div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.product-detail-card-header-sellvana{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.product-detail-card-wrapper-sellvana{
+    display: flex;
+    flex-direction: column;
+    width:470px;
+    align-items: center;
+    padding:20px;
+    border: 1px solid #CBD5E0;
+    border-radius: 17.4125px;
+}
+
+.product-detail-content-sellvana{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.product-detail-input-sellvana select{
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    width: 100%;
+    height: 43px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2D3748;
+    outline:none;
+    padding: 0px 15px;
+}
+
+.product-detail-input-sellvana input{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D3748;
+    outline: none;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    height: 50px;
+    padding: 0px 15px;
+    width:100%;
+}
+
+.product-detail-input-sellvana label{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #2D3748;
+}
+
+.product-detail-input-sellvana{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    align-items: flex-start;
+}
+
+.add-to-cart-button-sellvana:hover{
+    background-color: #1f7362;
+}
+
+.add-to-cart-button-sellvana{
+    margin-top:30px;
+    background: #2DB396;
+    border-radius: 6.52969px;
+    width: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding:13px 30px;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.total-value-product-content-sellvana{
+    padding-top:13px;
+    border-top: 1px solid #CBD5E0;
+    display: flex;
+    width: 100%;
+    margin-top:30px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.4125px;
+    color: #2D3748;
+}
+
+.product-detail-image-sellvana{
+    border-radius: 25px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    width: 550px;
+    height: 483px;
+    object-fit: contain;
+}
+
+.seller-avatar-img-sellvana{
+    border-radius: 50%;
+    width:60px;
+    height: 60px;
+}
+
+#rating-star{
+    color:#fbc634 !important;
+}
+
+.product-detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+    height: auto;
+    margin: 35px auto 30px;
+    overflow: hidden;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-detail-header-location-content-sellvana h4{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D3748;
+}
+
+.product-detail-header-location-content-sellvana{
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+}
+
+.product-detail-header-rating-content-sellvana h4{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2D3748;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.product-detail-header-sellvana{
+    display: flex;
+    flex-direction: column;
+    gap:11px;
+}
+
+.product-detail-header-title-sellvana{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    color: #2D3748;
+    line-height: 30px;
+}
+
+.product-detail-header-content-sellvana{
+    display: flex;
+    flex-display: row;
+    gap: 20px;
+}
+
+.product-detail-header-content-sellvana div{
+    display: flex;
+    flex-display: row;
+    align-items: center;
+}
+

@@ -4,7 +4,6 @@
     ServletContext context = getServletConfig().getServletContext();
     String appAccent = context.getInitParameter("appAccent");
 %>
-<body>
 
 <%
     String title = request.getParameter("title");
@@ -14,15 +13,16 @@
     String stringOut = "<input class='input' name='"+ inputName +"' type='"+ inputType +"' placeholder='"+ title +"' />";
     out.println(stringOut);
 %>
-</body>
 <style>
     .input {
-        max-width: 190px;
         font-family: Inter;
+        margin-bottom: 30px;
         background-color: #f5f5f5;
         color: #090101;
+        font-size: 14px;
         padding: .15rem .5rem;
-        min-height: 40px;
+        width: 100%;
+        height:50px;
         border-radius: 4px;
         outline: none;
         border: none;

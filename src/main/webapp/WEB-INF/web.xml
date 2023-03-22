@@ -11,4 +11,8 @@
         <param-name>appAccent</param-name>
         <param-value>#008CEA</param-value>
     </context-param>
+    <context-param>
+        <param-name>appAccentHover</param-name>
+        <param-value>#2076AF</param-value>
+    </context-param>
 </web-app>
