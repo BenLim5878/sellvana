@@ -15,8 +15,12 @@ public class IndexServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/jsp/page/userHomePage.jsp").forward(request,response);
         } else if (path.equals("/app/product")) {
             request.getRequestDispatcher("/WEB-INF/jsp/page/userProductDetail.jsp").forward(request, response);
-        } else if (path.equals("/app/register")) {
-            request.getRequestDispatcher("/WEB-INF/jsp/page/registerPage.jsp").forward(request, response);
+        } else if (path.equals("/app/register")){
+            request.getRequestDispatcher("/WEB-INF/jsp/page/registerSelection.jsp").forward(request,response);
+        } else if (path.equals("/app/register/user")) {
+            request.getRequestDispatcher("/WEB-INF/jsp/page/userRegister.jsp").forward(request, response);
+        } else if (path.equals("/app/register/seller")) {
+            request.getRequestDispatcher("/WEB-INF/jsp/page/sellerRegister.jsp").forward(request, response);
         } else if (path.equals("/app/order")){
             request.getRequestDispatcher("/WEB-INF/jsp/page/userOrderHistory.jsp").forward(request,response);
         } else if (path.equals("/app/order/detail")){
@@ -39,6 +43,8 @@ public class IndexServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/jsp/page/userPasswordModify.jsp").forward(request,response);
         }else if (path.equals("/app/checkout")){
             request.getRequestDispatcher("/WEB-INF/jsp/page/userCheckout.jsp").forward(request,response);
+        }else if (path.equals("/app/checkout/complete")){
+            request.getRequestDispatcher("/WEB-INF/jsp/page/userCheckoutComplete.jsp").forward(request,response);
         }
     }
 

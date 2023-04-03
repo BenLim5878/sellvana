@@ -11,6 +11,52 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="/app/js/utility.js"></script>
     <style>
+        #country{
+            background-color: #efefef;
+        }
+
+        #country:hover{
+            border: 1.13px solid #BDBDBD !important;
+        }
+
+        .address-state-selectBox .address-state-select-box-input-container-sellvana{
+            height: 56px;
+            border-radius: 5px;
+            border: 1.13px solid #BDBDBD;
+        }
+
+        .address-state-selectBox h3{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18.0498px;
+            color: #4A5568;
+        }
+
+        .address-state-selectBox{
+            width: 350px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .address-form-input-container-sellvana{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #register-content-2{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+            gap: 20px;
+        }
+    </style>
+    <style>
         .complete-register-wrapper-sellvana svg{
             animation: progressBarIncrement 4s ease-out;
         }
@@ -29,7 +75,7 @@
             background-color: <%=appAccent%>;
             outline: none;
             border:none;
-            border-radius: 7px;
+            border-radius: 5px;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 500;
@@ -37,7 +83,7 @@
             color: #FFFFFF;
             cursor: hand;
             transition: all 0.2s ease-in;
-            box-shadow: 0px 4.11878px 10.297px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
         #quit-button-sellvana{
@@ -46,7 +92,7 @@
             background-color: #a8a8a8;
             outline: none;
             border:none;
-            border-radius: 7px;
+            border-radius: 5px;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 500;
@@ -54,7 +100,7 @@
             color: #FFFFFF;
             cursor: hand;
             transition: all 0.2s ease-in;
-            box-shadow: 0px 4.11878px 10.297px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
         .complete-register-wrapper-sellvana div{
@@ -457,7 +503,6 @@
         }
 
         #register-content-1{
-
         }
 
         #register-content-2{
@@ -469,6 +514,10 @@
         }
 
         #register-content-4{
+            display: none;
+        }
+
+        #register-content-5{
             display: none;
         }
 
@@ -505,12 +554,13 @@
 
         .image-register-sellvana{
             background-image: url(<%
-            out.println(context.getContextPath()+"/img/ecommerce-checkout-laptop-bro.png");
+            out.println(context.getContextPath()+"/img/house-rafiki.png");
             %>);
             width: 50%;
             margin-left: 70px;
-            height:90%;
+            height:80%;
             background-size: cover;
+            margin-top:50px;
         }
 
         .screen-content-register-sellvana{
@@ -627,8 +677,9 @@
                 <li id="slick-bar-1" class="slick-active"></li>
                 <li id="slick-bar-2" class="slick-active"></li>
                 <li id="slick-bar-3" class="slick-active"></li>
+                <li id="slick-bar-4" class="slick-active"></li>
             </ul>
-            <h1 class="title-register-sellvana">New User</h1>
+            <h1 class="title-register-sellvana">New Seller</h1>
             <h2 class="description-register-sellvana">Register new account</h2>
         </div>
         <div class="input-box-padding-sellvana">
@@ -641,20 +692,29 @@
                 </jsp:include>
             </button>
             <div id="register-content-1" class="input-register-box-sellvana">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                    <jsp:param name="title" value="Company Name"/>
+                    <jsp:param name="inputType" value="text"/>
+                    <jsp:param name="inputName" value="companyNameSellvana"/>
+                    <jsp:param name="inputWidth" value="100%"/>
+                    <jsp:param name="inputHeight" value="56px"/>
+                    <jsp:param name="inputFontSize" value="19px"/>
+                    <jsp:param name="inputErrorMessage" value="Please input valid company name"/>
+                </jsp:include>
                 <div class="input-row-box-sellvana">
                     <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
-                        <jsp:param name="title" value="First Name"/>
+                        <jsp:param name="title" value="Contact First Name"/>
                         <jsp:param name="inputType" value="text"/>
-                        <jsp:param name="inputName" value="firstNameSellvana"/>
+                        <jsp:param name="inputName" value="contactFirstNameSellvana"/>
                         <jsp:param name="inputWidth" value="252px"/>
                         <jsp:param name="inputHeight" value="56px"/>
                         <jsp:param name="inputFontSize" value="19px"/>
                         <jsp:param name="inputErrorMessage" value="Please input valid first name"/>
                     </jsp:include>
                     <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
-                        <jsp:param name="title" value="Last Name"/>
+                        <jsp:param name="title" value="Contact Last Name"/>
                         <jsp:param name="inputType" value="text"/>
-                        <jsp:param name="inputName" value="lastNameSellvana"/>
+                        <jsp:param name="inputName" value="contactLastNameSellvana"/>
                         <jsp:param name="inputWidth" value="252px"/>
                         <jsp:param name="inputHeight" value="56px"/>
                         <jsp:param name="inputFontSize" value="19px"/>
@@ -679,17 +739,74 @@
                     <jsp:param name="inputFontSize" value="19px"/>
                     <jsp:param name="inputErrorMessage" value="Please input valid telephone number"/>
                 </jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
-                    <jsp:param name="title" value="Date Of Birth"/>
-                    <jsp:param name="inputType" value="date"/>
-                    <jsp:param name="inputName" value="dateOfBirthSellvana"/>
-                    <jsp:param name="inputWidth" value="100%"/>
-                    <jsp:param name="inputHeight" value="56px"/>
-                    <jsp:param name="inputFontSize" value="19px"/>
-                    <jsp:param name="inputErrorMessage" value="Please input valid date of birth"/>
-                </jsp:include>
             </div>
             <div id="register-content-2" class="input-register-box-sellvana">
+                <div class="address-form-input-container-sellvana">
+                    <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                        <jsp:param name="title" value="Unit No"/>
+                        <jsp:param name="inputType" value="text"/>
+                        <jsp:param name="inputName" value="unitNo"/>
+                        <jsp:param name="inputWidth" value="100px"/>
+                        <jsp:param name="inputHeight" value="56px"/>
+                        <jsp:param name="inputFontSize" value="19px"/>
+                        <jsp:param name="inputErrorMessage" value="Please input valid unit number"/>
+                    </jsp:include>
+                    <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                        <jsp:param name="title" value="Street"/>
+                        <jsp:param name="inputType" value="text"/>
+                        <jsp:param name="inputName" value="street"/>
+                        <jsp:param name="inputWidth" value="400px"/>
+                        <jsp:param name="inputHeight" value="56px"/>
+                        <jsp:param name="inputFontSize" value="19px"/>
+                        <jsp:param name="inputErrorMessage" value="Please input valid street name"/>
+                    </jsp:include>
+                </div>
+                <div class="address-form-input-container-sellvana">
+                    <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                        <jsp:param name="title" value="Zip Code"/>
+                        <jsp:param name="inputType" value="number"/>
+                        <jsp:param name="inputName" value="zipCode"/>
+                        <jsp:param name="inputWidth" value="150px"/>
+                        <jsp:param name="inputHeight" value="56px"/>
+                        <jsp:param name="inputFontSize" value="19px"/>
+                        <jsp:param name="inputErrorMessage" value="Please input valid zip code"/>
+                    </jsp:include>
+                    <div class="address-state-selectBox">
+                        <h3>State</h3>
+                        <div class="address-state-select-box-input-container-sellvana">
+                            <jsp:include page="/WEB-INF/jsp/component/selectBox.jsp">
+                                <jsp:param name="option" value="Johor"/>
+                                <jsp:param name="option" value="Kedah"/>
+                                <jsp:param name="option" value="Kelantan"/>
+                                <jsp:param name="option" value="Kuala Lumpur"/>
+                                <jsp:param name="option" value="Labuan"/>
+                                <jsp:param name="option" value="Malacca"/>
+                                <jsp:param name="option" value="Negeri Sembilan"/>
+                                <jsp:param name="option" value="Pahang"/>
+                                <jsp:param name="option" value="Penang"/>
+                                <jsp:param name="option" value="Perak"/>
+                                <jsp:param name="option" value="Perlis"/>
+                                <jsp:param name="option" value="Sabah"/>
+                                <jsp:param name="option" value="Sarawak"/>
+                                <jsp:param name="option" value="Selangor"/>
+                                <jsp:param name="option" value="Terangganu"/>
+                                <jsp:param name="defaultOption" value="4"/>
+                                <jsp:param name="selectBoxFontSize" value="19px"/>
+                            </jsp:include>
+                        </div>
+                    </div>
+                </div>
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                    <jsp:param name="title" value="Country"/>
+                    <jsp:param name="inputType" value="text"/>
+                    <jsp:param name="inputName" value="country"/>
+                    <jsp:param name="inputWidth" value="550px"/>
+                    <jsp:param name="inputHeight" value="56px"/>
+                    <jsp:param name="inputFontSize" value="19px"/>
+                    <jsp:param name="inputErrorMessage" value="Please input valid country"/>
+                </jsp:include>
+            </div>
+            <div id="register-content-3" class="input-register-box-sellvana">
                 <div class="upload-image-content-register-sellvana">
                     <img id="avatar-image-register-sellvana" src="<%
                         out.println(context.getContextPath()+"/img/male-avatar.png");
@@ -706,7 +823,7 @@
                     </div>
                 </div>
             </div>
-            <div id="register-content-3" class="input-register-box-sellvana">
+            <div id="register-content-4" class="input-register-box-sellvana">
                 <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Password"/>
                     <jsp:param name="inputType" value="password"/>
@@ -746,7 +863,7 @@
                     </div>
                 </div>
             </div>
-            <div id="register-content-4" class="input-register-box-sellvana">
+            <div id="register-content-5" class="input-register-box-sellvana">
                 <div class="complete-register-content-sellvana">
                     <div class="complete-loading-register-content-sellvana">
                         <div class="lds-ripple"><div></div><div></div></div>
@@ -789,26 +906,37 @@
         $('.input-sellvana').attr('autocomplete','nope');
     })
 
-    $('#firstNameSellvana').on('input',()=>{
+    $('#companyNameSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkName('#firstNameSellvana')
+        var result = checkName('#companyNameSellvana')
         if (result){
-            $('#firstNameSellvana').removeClass('error')
-            $('#tooltip-firstNameSellvana').removeClass('tooltip-show')
+            $('#companyNameSellvana').removeClass('error')
+            $('#tooltip-companyNameSellvana').removeClass('tooltip-show')
         }else {
-            $('#firstNameSellvana').addClass('error')
-            $('#tooltip-firstNameSellvana').addClass('tooltip-show')
+            $('#companyNameSellvana').addClass('error')
+            $('#tooltip-companyNameSellvana').addClass('tooltip-show')
         }
     })
-    $('#lastNameSellvana').on('input',()=>{
+    $('#contactFirstNameSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkName('#lastNameSellvana')
+        var result = checkName('#contactFirstNameSellvana')
         if (result){
-            $('#lastNameSellvana').removeClass('error')
-            $('#tooltip-lastNameSellvana').removeClass('tooltip-show')
+            $('#contactFirstNameSellvana').removeClass('error')
+            $('#tooltip-contactFirstNameSellvana').removeClass('tooltip-show')
         }else {
-            $('#lastNameSellvana').addClass('error')
-            $('#tooltip-lastNameSellvana').addClass('tooltip-show')
+            $('#contactFirstNameSellvana').addClass('error')
+            $('#tooltip-contactFirstNameSellvana').addClass('tooltip-show')
+        }
+    })
+    $('#contactLastNameSellvana').on('input',()=>{
+        checkFormContent()
+        var result = checkName('#contactLastNameSellvana')
+        if (result){
+            $('#contactLastNameSellvana').removeClass('error')
+            $('#tooltip-contactLastNameSellvana').removeClass('tooltip-show')
+        }else {
+            $('#contactLastNameSellvana').addClass('error')
+            $('#tooltip-contactLastNameSellvana').addClass('tooltip-show')
         }
     })
     $('#emailAddressSellvana').on('input',()=>{
@@ -854,7 +982,7 @@
     })
 
     function checkFormContent(){
-        if (checkName('#firstNameSellvana') && checkName('#lastNameSellvana') && checkEmailAddress('#emailAddressSellvana') && checkTelephoneNumber('#telephoneNumberSellvana') && checkDateOfBirth('#dateOfBirthSellvana')){
+        if (checkName('#companyNameSellvana') && checkName('#contactFirstNameSellvana') && checkName('#contactLastNameSellvana') && checkEmailAddress('#emailAddressSellvana') && checkTelephoneNumber('#telephoneNumberSellvana')){
             $('.button-register-sellvana').prop('disabled',false)
         }else {
             $('.button-register-sellvana').prop('disabled',true)
@@ -945,6 +1073,8 @@
                 $('#register-content-1').css("display","flex")
                 $('#register-content-2').css("display","none")
                 $('#register-content-3').css("display","none")
+                $('#register-content-4').css("display","none")
+                $('#register-content-5').css("display","none")
                 //
                 $('#slick-bar-1').addClass('slick-return');
                 $('#slick-bar-1').removeClass('slick-completed');
@@ -952,6 +1082,8 @@
                 $('#slick-bar-2').removeClass('slick-return');
                 $('#slick-bar-3').removeClass('slick-completed');
                 $('#slick-bar-3').removeClass('slick-return');
+                $('#slick-bar-4').removeClass('slick-completed');
+                $('#slick-bar-4').removeClass('slick-return');
                 //
                 $('.button-register-sellvana').html("Next")
                 //
@@ -964,6 +1096,8 @@
                 $('#register-content-1').css("display","none")
                 $('#register-content-2').css("display","flex")
                 $('#register-content-3').css("display","none")
+                $('#register-content-4').css("display","none")
+                $('#register-content-5').css("display","none")
                 //
                 $('#slick-bar-1').addClass('slick-completed');
                 $('#slick-bar-1').removeClass('slick-return');
@@ -976,14 +1110,14 @@
                 }
                 $('#slick-bar-3').removeClass('slick-completed');
                 $('#slick-bar-3').removeClass('slick-return');
+                $('#slick-bar-4').removeClass('slick-completed');
+                $('#slick-bar-4').removeClass('slick-return');
                 //
-                if ($("#avatar-image-register-sellvana").attr('src').match("/app/img/male-avatar.png")){
-                    $('.button-register-sellvana').html("Skip")
-                } else {
-                    $('.button-register-sellvana').html("Continue")
-                }
+                $('.button-register-sellvana').html("Continue")
                 //
-                $('.description-register-sellvana').html("Upload profile picture")
+                $('.description-register-sellvana').html("Enter Address Details")
+                //
+                verifyForm()
                 break;
             case 3:
                 $('.back-button-register-sellvana').css('display','block')
@@ -992,6 +1126,8 @@
                 $('#register-content-1').css("display","none")
                 $('#register-content-2').css("display","none")
                 $('#register-content-3').css("display","flex")
+                $('#register-content-4').css("display","none")
+                $('#register-content-5').css("display","none")
                 //
                 $('#slick-bar-1').addClass('slick-completed');
                 $('#slick-bar-1').removeClass('slick-return');
@@ -1004,19 +1140,26 @@
                     $('#slick-bar-3').removeClass('slick-completed');
                     $('#slick-bar-3').removeClass('slick-return');
                 }
+                $('#slick-bar-4').removeClass('slick-completed');
+                $('#slick-bar-4').removeClass('slick-return');
                 //
-                $('.button-register-sellvana').html("Complete")
+                if ($("#avatar-image-register-sellvana").attr('src').match("/app/img/male-avatar.png")){
+                    $('.button-register-sellvana').html("Skip")
+                } else {
+                    $('.button-register-sellvana').html("Continue")
+                }
                 //
-                $('.description-register-sellvana').html("Enter Security Details")
+                $('.description-register-sellvana').html("Upload profile picture")
                 break;
             case 4:
-                $('.back-button-register-sellvana').css('display','none')
-                $('.button-register-sellvana').css('display','none')
+                $('.back-button-register-sellvana').css('display','block')
+                $('.button-register-sellvana').css('display','block')
                 //
                 $('#register-content-1').css("display","none")
                 $('#register-content-2').css("display","none")
                 $('#register-content-3').css("display","none")
                 $('#register-content-4').css("display","flex")
+                $('#register-content-5').css("display","none")
                 //
                 $('#slick-bar-1').addClass('slick-completed');
                 $('#slick-bar-1').removeClass('slick-return');
@@ -1024,18 +1167,47 @@
                 $('#slick-bar-2').removeClass('slick-return');
                 $('#slick-bar-3').addClass('slick-completed');
                 $('#slick-bar-3').removeClass('slick-return');
+                if (isBack){
+                    $('#slick-bar-4').removeClass('slick-completed');
+                    $('#slick-bar-4').addClass('slick-return');
+                } else {
+                    $('#slick-bar-4').removeClass('slick-completed');
+                    $('#slick-bar-4').removeClass('slick-return');
+                }
+                //
+                $('.button-register-sellvana').html("Complete")
+                //
+                $('.description-register-sellvana').html("Enter Security Details")
+                break;
+            case 5:
+                $('.back-button-register-sellvana').css('display','none')
+                $('.button-register-sellvana').css('display','none')
+                //
+                $('#register-content-1').css("display","none")
+                $('#register-content-2').css("display","none")
+                $('#register-content-3').css("display","none")
+                $('#register-content-4').css("display","none")
+                $('#register-content-5').css("display","flex")
+                //
+                $('#slick-bar-1').addClass('slick-completed');
+                $('#slick-bar-1').removeClass('slick-return');
+                $('#slick-bar-2').addClass('slick-completed');
+                $('#slick-bar-2').removeClass('slick-return');
+                $('#slick-bar-3').addClass('slick-completed');
+                $('#slick-bar-3').removeClass('slick-return');
+                $('#slick-bar-4').addClass('slick-completed');
+                $('#slick-bar-4').removeClass('slick-return');
+                // show purpose only
+                setTimeout(()=>{
+                    $('.complete-loading-register-content-sellvana').css('display','none')
+                    $('.complete-register-wrapper-sellvana').css('display','flex')
+                },1000)
                 //
                 $('.description-register-sellvana').css('display','none')
                 $('.title-register-sellvana').css('display','none')
                 //
                 $('.login-message-sellvana').css('display','none')
                 $('.slick-dots').css('top','-200px');
-                // show purpose only
-                setTimeout(()=>{
-                    $('.complete-loading-register-content-sellvana').css('display','none')
-                    $('.complete-register-wrapper-sellvana').css('display','flex')
-                },1000)
-
                 break;
         }
     }
@@ -1107,6 +1279,46 @@
         } else {
             $('#password-requirement-label-4').attr('class','password-requirement-label-activated')
             $('#password-requirement-logo-4').attr('class','password-requirement-logo-green')
+        }
+    })
+</script>
+<script>
+    $('#country').val("Malaysia")
+    $('#country').attr('disabled','true')
+
+    function verifyForm(){
+        if ($('#unitNo').val().trim().length >0 && $('#street').val().trim().length >0 && $('#zipCode').val().trim().length >0 && $('#country').val().trim().length >0 && verifyZipCode()){
+            $('.button-register-sellvana').attr('disabled',false)
+        } else{
+            $('.button-register-sellvana').attr('disabled',true)
+        }
+    }
+
+    function verifyZipCode(){
+        var zipCodeVal = $('#zipCode').val();
+        var result = false;
+        const zipCodeRegex = /^\d{5}$/
+        const strippedZipCode = zipCodeVal.replace(/\D/g, '');
+        if (zipCodeRegex.test(strippedZipCode)){
+            result = true;
+        }
+        return result
+    }
+
+    verifyForm()
+
+    $('#unitNo,#street,#zipCode,#country').on('input',()=>{
+        verifyForm()
+    })
+
+    $('#zipCode').on('input',()=>{
+        var result = verifyZipCode();
+        if (result){
+            $('#zipCode').removeClass('error')
+            $('#tooltip-zipCode').removeClass('tooltip-show')
+        }else {
+            $('#zipCode').addClass('error')
+            $('#tooltip-zipCode').addClass('tooltip-show')
         }
     })
 </script>

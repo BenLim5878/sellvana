@@ -37,7 +37,7 @@
             </div>
         </div>
         <section class="checkout-input-container-sellvana">
-            <section style="display: none" id="checkout-content-1" class="checkout-input-box-sellvana">
+            <section id="checkout-content-1" class="checkout-input-box-sellvana">
                 <jsp:include page="/WEB-INF/jsp/component/addressListItem.jsp">
                     <jsp:param name="addressID" value="1"/>
                     <jsp:param name="addressName" value="Address 1"/>
@@ -66,7 +66,7 @@
                     <jsp:param name="isAddressSelection" value="true"/>
                 </jsp:include>
             </section>
-            <section id="checkout-content-2" class="checkout-input-box-sellvana">
+            <section style="display: none"  id="checkout-content-2" class="checkout-input-box-sellvana">
                 <div class="checkout-content-2-left">
                     <div class="payment-method-container-sellvana">
                         <div class="payment-method-selection-sellvana">
@@ -134,6 +134,121 @@
                         </section>
                     </div>
                 </div>
+                <div class="checkout-content-2-right">
+                    <div class="checkout-price-title-sellvana">
+                        <i class="fa-solid fa-tag"></i>
+                        <h3>Price Summary</h3>
+                    </div>
+                    <div class="checkout-price-line-sellvana">
+                        <div>
+                            <h5 class="price-title subtext">Subtotal :</h5>
+                            <h5 class="price-text subprice">RM 111.11</h5>
+                        </div>
+                        <div>
+                            <h5 class="price-title subtext">Shipping fee :</h5>
+                            <h5 class="price-text subprice">RM 5.55</h5>
+                        </div>
+                        <div>
+                            <h4 class="price-title maintext">Order Total :</h4>
+                            <h3 class="price-text mainprice">RM 222.22</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section style="display: none" id="checkout-content-3" class="checkout-input-box-sellvana">
+                <div class="checkout-description-container-sellvana">
+                    <div class="checkout-description-list-sellvana left">
+                        <div class="checkout-confirmation-title-sellvana">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>Shipping</h3>
+                        </div>
+                        <div class="address-content-line">
+                            <h4>12, 11B Taman Sungai Kapar Indah</h4>
+                            <h4>42200 Klang, Selangor</h4>
+                            <h4>Malaysia</h4>
+                        </div>
+                    </div>
+                    <div class="checkout-description-seperator-sellvana"></div>
+                    <div class="checkout-description-list-sellvana right">
+                        <div class="checkout-confirmation-title-sellvana">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <h3>Billing Details</h3>
+                        </div>
+                        <div class="checkout-payment-detail-container-sellvana">
+                            <div id="payment-card" class="checkout-payment-detail-list-sellvana">
+                                <h4 class="payment-label">Credit / Debit Card</h4>
+                                <h4 class="payment-value">xxxx-xxxx-xxxx-0877</h4>
+                            </div>
+                            <div style="display: none" id="payment-ewallet" class="checkout-payment-detail-list-sellvana">
+                                <h4 class="payment-label">E-wallet</h4>
+                                <h4 class="payment-value">011-39987039</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-content-3-main">
+                    <div class="checkout-product-list-container-sellvana">
+                        <div class="checkout-product-list-header-container-sellvana">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                            <h2>Order List</h2>
+                        </div>
+                        <div class="order-list-content-container-sellvana">
+                            <div class="order-list-product-sellvana">
+                                <div class="order-list-product-container-sellvana">
+                                    <img src="/app/img/productSampleImage1.png">
+                                    <div class="order-list-product-description-container-sellvana">
+                                        <h4>adidas Unisex D.O.N. Issue #3 Basketball Shoe (GW2945) Sport Planet 8-3</h4>
+                                        <h5>Type: GW2945,UK 9</h5>
+                                        <h4 class="quantity">x1</h4>
+                                    </div>
+                                </div>
+                                <h5 class="order-list-product-total-price-sellvana">RM 249.90</h5>
+                            </div>
+                            <div class="order-list-product-sellvana">
+                                <div class="order-list-product-container-sellvana">
+                                    <img src="/app/img/productSampleImage1.png">
+                                    <div class="order-list-product-description-container-sellvana">
+                                        <h4>adidas Unisex D.O.N. Issue #3 Basketball Shoe (GW2945) Sport Planet 8-3</h4>
+                                        <h5>Type: GW2945,UK 9</h5>
+                                        <h4 class="quantity">x1</h4>
+                                    </div>
+                                </div>
+                                <h5 class="order-list-product-total-price-sellvana">RM 249.90</h5>
+                            </div>
+                            <div class="order-list-product-sellvana">
+                                <div class="order-list-product-container-sellvana">
+                                    <img src="/app/img/productSampleImage1.png">
+                                    <div class="order-list-product-description-container-sellvana">
+                                        <h4>adidas Unisex D.O.N. Issue #3 Basketball Shoe (GW2945) Sport Planet 8-3</h4>
+                                        <h5>Type: GW2945,UK 9</h5>
+                                        <h4 class="quantity">x1</h4>
+                                    </div>
+                                </div>
+                                <h5 class="order-list-product-total-price-sellvana">RM 249.90</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-content-2-right">
+                        <div class="checkout-price-title-sellvana">
+                            <i style="font-size: 20px;color:<%=appAccent%>;" class="fa-solid fa-tag"></i>
+                            <h3 style="font-family: Inter;font-size: 18px; font-weight: 600;" >Price Summary</h3>
+                        </div>
+                        <div class="checkout-price-line-sellvana">
+                            <div>
+                                <h5 class="price-title subtext">Subtotal :</h5>
+                                <h5 class="price-text subprice">RM 111.11</h5>
+                            </div>
+                            <div>
+                                <h5 class="price-title subtext">Shipping fee :</h5>
+                                <h5 class="price-text subprice">RM 5.55</h5>
+                            </div>
+                            <div>
+                                <h4 class="price-title maintext">Order Total :</h4>
+                                <h3 class="price-text mainprice">RM 222.22</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </section>
     </div>
@@ -168,12 +283,14 @@
         $('#ewallet-radio-button').prop("checked",false)
         selectedPaymentType = paymentType.card
         refreshPaymentList()
+        checkFormContent()
     })
 
     $('#ewallet-radio-button').click(()=>{
         $('#card-radio-button').prop("checked",false)
         selectedPaymentType = paymentType.ewallet
         refreshPaymentList()
+        checkFormContent()
     })
 
     refreshPaymentList()
@@ -203,7 +320,7 @@
         }
         var groups = input.match(/.{1,4}/g);
         if (groups) {
-            event.target.value = groups.join('-');
+            event.target.value = groups.join(' ');
         }else{
             event.target.value = input;
         }
@@ -375,6 +492,9 @@
                 $('.title-checkout-sellvana').html("Payment Information")
                 $('.description-checkout-sellvana').html("Select a payment method for this order")
                 checkFormContent()
+                //
+                $('.next-button-sellvana').html('<i class="fa-solid fa-caret-right"></i>')
+                $('.next-button-sellvana').removeClass("complete-button")
                 break;
             case 3:
                 $('.next-button-sellvana').css('display','block')
@@ -382,13 +502,29 @@
                 //
                 $('#checkout-content-1').css("display","none")
                 $('#checkout-content-2').css("display","none")
-                $('#checkout-content-3').css("display","flex")
+                $('#checkout-content-3').css("display","block")
                 //
                 $('#slick-bar-2').addClass('slick-completed');
                 $('#slick-bar-2').removeClass('slick-return');
                 //
                 $('.title-checkout-sellvana').html("Order Confirmation")
                 $('.description-checkout-sellvana').html("Review your final order detail")
+                //
+                if (selectedPaymentType == paymentType.card){
+                    $('#payment-card').css('display','flex')
+                    $('#payment-ewallet').css('display','none')
+                    var cardNumber = $('#cardNumberSellvana').val()
+                    var formatedNumber = cardNumber.substring(cardNumber.length-4)
+                    $('#payment-card .payment-value').html("xxxx-xxxx-xxxx-"+formatedNumber)
+                }else{
+                    $('#payment-ewallet').css('display','flex')
+                    $('#payment-card').css('display','none')
+                    var phoneNumber = $('#telephoneNumberSellvana').val()
+                    $('#payment-card .payment-value').html(phoneNumber)
+                }
+                //
+                $('.next-button-sellvana').html('<i class="fa-solid fa-circle-check"></i>')
+                $('.next-button-sellvana').addClass("complete-button")
                 break;
         }
     }
@@ -419,6 +555,202 @@
     }
 </script>
 <style>
+    .complete-button:hover{
+        background-color: rgb(33, 129, 108) !important;
+    }
+
+    .complete-button{
+        background-color: rgb(45, 179, 150) !important;
+    }
+
+    .checkout-product-list-header-container-sellvana{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 20px;
+    }
+
+    .checkout-product-list-container-sellvana i{
+        color: <%=appAccent%>;
+        font-size: 20px;
+    }
+
+    .checkout-product-list-container-sellvana h2{
+        font-family:Inter;
+        font-weight: 600;
+        font-size: 19px;
+        color: #313131
+    }
+
+    .checkout-content-3-main{
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        justify-content: space-between;
+        gap: 50px;
+        align-items: flex-start;
+    }
+
+    .checkout-payment-detail-list-sellvana .payment-value{
+        font-family:Inter;
+        font-weight: 400;
+        font-size: 16px;
+        color: #3f3f3f;
+    }
+
+    .checkout-payment-detail-list-sellvana .payment-label{
+        font-family:Inter;
+        font-weight: 500;
+        font-size: 16px;
+        color: #313131;
+    }
+
+    .checkout-payment-detail-list-sellvana{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-end;
+    }
+
+    .checkout-payment-detail-container-sellvana{
+        margin-top: 13px;
+    }
+
+    .checkout-description-list-sellvana{
+        padding: 30px;
+    }
+
+    .checkout-description-seperator-sellvana{
+        border-right: 1px solid #cccccc;
+    }
+
+    .checkout-description-container-sellvana{
+        border: 1px solid #cccccc;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .checkout-confirmation-title-sellvana h3{
+        font-family:Inter;
+        font-weight: 600;
+        font-size: 19px;
+        color: #313131;
+    }
+
+    .checkout-confirmation-title-sellvana i{
+        color: <%=appAccent%>;
+        font-size: 20px;
+    }
+
+    .right .checkout-confirmation-title-sellvana{
+        align-items: flex-end;
+    }
+
+    .left .checkout-confirmation-title-sellvana{
+        align-items: flex-start;
+    }
+
+    .checkout-confirmation-title-sellvana{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .checkout-price-title-sellvana i{
+        font-size: 18px;
+        color: #363636;
+    }
+
+    .checkout-price-title-sellvana h3{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #363636;
+    }
+
+    .checkout-price-title-sellvana{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 15px;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .checkout-price-line-sellvana .mainprice{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 21px;
+        color: <%=appAccent%>;
+    }
+
+    .checkout-price-line-sellvana .maintext{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        color: #3f3f3f;
+    }
+
+    .checkout-price-line-sellvana .subprice{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16.5px;
+        color: #3f3f3f;
+    }
+
+    .checkout-price-line-sellvana .subtext{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15.5px;
+        color: #808080;
+    }
+
+    .checkout-price-line-sellvana{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .checkout-price-line-sellvana div{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .price-text{
+        width: 150px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .price-title{
+        width: 200px;
+    }
+
+    .checkout-content-2-right{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #cccccc;
+        border-radius: 7px;
+    }
+
+    #checkout-content-2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
     .payment-form-container-sellvana{
         display: flex;
         flex-direction: column;
@@ -619,6 +951,75 @@
         z-index: 5;
         top: 0;
         border-radius: 2px;
+    }
+</style>
+<style>
+    .order-list-content-container-sellvana .order-list-product-sellvana:not(:first-child){
+        padding-top:30px;
+    }
+
+    .order-list-product-sellvana{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .order-list-product-description-container-sellvana h5{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13.5px;
+        color: #808080;
+    }
+
+    .order-list-product-description-container-sellvana .quantity{
+        font-size:14.5px;
+    }
+
+    .order-list-product-description-container-sellvana h4{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15.5px;
+        color: #252525;
+    }
+
+    .order-list-product-description-container-sellvana{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .order-list-product-container-sellvana img{
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+
+    .order-list-product-container-sellvana{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap:20px;
+    }
+
+    .order-list-product-total-price-sellvana{
+        font-family:Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15.5px;
+        color: <%=appAccent%>;
+        white-space: nowrap;
+    }
+
+    .order-list-content-container-sellvana{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top:30px;
     }
 </style>
 </html>
