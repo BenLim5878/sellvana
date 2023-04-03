@@ -114,8 +114,8 @@
   #total-label-product-<%=productName%>{
     font-family:Inter;
     font-style: normal;
-    font-weight: 500;
-    font-size: 15.5px;
+    font-weight: 400;
+    font-size: 15px;
     color: #2c2c2c;
   }
 
@@ -140,7 +140,7 @@
   }
 
   .number-wrapper-sellvana button i{
-    font-size: 16.5px;
+    font-size: 15px;
     color:white;
   }
 
@@ -150,8 +150,8 @@
     text-align: center;
     font-family:Inter;
     font-style: normal;
-    font-weight: 500;
-    font-size: 16.5px;
+    font-weight: 400;
+    font-size: 15px;
     color: #2c2c2c;
     border:1px solid #d0d0d0;
     border-left: none !important;
@@ -169,8 +169,8 @@
   .column-price{
     font-family:Inter;
     font-style: normal;
-    font-weight: 500;
-    font-size: 16.3801px;
+    font-weight: 400;
+    font-size: 15px;
     color: #2c2c2c;
   }
 
@@ -185,7 +185,7 @@
     font-family:Inter;
     font-style: normal;
     font-weight: 400;
-    font-size: 15.3801px;
+    font-size: 14.5px;
     color: #2c2c2c;
     /*Maximum Text Line*/
     text-overflow: ellipsis;
@@ -200,7 +200,7 @@
     font-family:Inter;
     font-style: normal;
     font-weight: 500;
-    font-size: 17.3801px;
+    font-size: 16.3801px;
     color: #2c2c2c;
     /*Maximum Text Line*/
     text-overflow: ellipsis;

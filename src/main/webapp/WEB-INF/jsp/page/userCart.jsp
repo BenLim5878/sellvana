@@ -149,7 +149,7 @@
     font-family: Inter;
     font-weight: 400;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14.5px;
     border-radius: 5px;
     box-shadow: 0px 5.71429px 5px rgba(192, 192, 192, 0.25);
     transition: all 0.2s ease-in;
@@ -166,12 +166,13 @@
     font-family: Inter;
     font-weight: 500;
     color: <%=appAccent%>;
-    font-size: 19px;
+    font-size: 17.5px;
   }
 
   .cart-footer-price-content-sellvana .total-item{
     font-family: Inter;
     font-weight: 400;
+    font-size: 16.5px;
     color: #424242;
   }
 
@@ -205,7 +206,7 @@
     font-family:Inter;
     font-style: normal;
     font-weight: 400;
-    font-size: 18.3801px;
+    font-size: 15px;
     color: #525252;
   }
 

@@ -1,36 +1,52 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
+  String appAccent = application.getInitParameter("appAccent");
+%>
+<%
+  int defaultOption = Integer.parseInt(request.getParameter("defaultOption"));
+  String[] options =request.getParameterValues("option");
+  //  Options
   String selectBoxFontSize = request.getParameter("selectBoxFontSize");
 %>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 <div class="select-box">
   <div class="select-box__current" tabindex="1">
-    <div class="select-box__value">
-      <input class="select-box__input" type="radio" id="0" value="1" checked="checked" name="product-type">
-      <p class="select-box__input-text">Blue</p>
-    </div>
-    <div class="select-box__value">
-      <input class="select-box__input" type="radio" id="1" value="2" name="product-type">
-      <p class="select-box__input-text">Red</p>
-    </div>
-    <div class="select-box__value">
-      <input class="select-box__input" type="radio" id="2" value="3" name="product-type">
-      <p class="select-box__input-text">Yellow</p>
-    </div>
     <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true">
   </div>
-  <ul class="select-box__list">
-    <li>
-      <label class="select-box__option" for="0" aria-hidden="aria-hidden">Blue</label>
-    </li>
-    <li>
-      <label class="select-box__option" for="1" aria-hidden="aria-hidden">Red</label>
-    </li>
-    <li>
-      <label class="select-box__option" for="2" aria-hidden="aria-hidden">Yellow</label>
-    </li>
-  </ul>
+  <ul class="select-box__list"></ul>
 </div>
+<script>
+  <%
+    for (int i = 0; i< options.length; i++){
+      if (i+1 == defaultOption){
+        out.println(
+          "$('.select-box__current').append('"+
+          "<div class=\"select-box__value\">"+
+            "<input class=\"select-box__input\" type=\"radio\" id=\""+i+"\" value=\""+(i+1)+"\" checked=\"checked\" name=\"product-type\">"+
+            "<p class=\"select-box__input-text\">"+options[i]+"</p>"+
+          "</div>"+
+          "')"
+        );
+      } else {
+       out.println(
+          "$('.select-box__current').append('"+
+          "<div class=\"select-box__value\">"+
+            "<input class=\"select-box__input\" type=\"radio\" id=\""+i+"\" value=\""+(i+1)+"\" name=\"product-type\">"+
+            "<p class=\"select-box__input-text\">"+options[i]+"</p>"+
+          "</div>"+
+          "')"
+        );
+      }
+      out.println(
+        "$('.select-box__list').append('"+
+        "<li>"+
+        "<label class=\"select-box__option\" for=\""+ (i) +"\" aria-hidden=\"aria-hidden\">"+ options[i] +"</label>"+
+        "</li>"+
+        "')"
+      );
+    }
+  %>
+</script>
 <style>
   .select-box {
     position: relative;
@@ -39,6 +55,7 @@
     margin: 0 auto;
     font-family: 'Inter';
     font-style: normal;
+    color: #4A5568;
     font-weight: 400;
     font-size: <%=selectBoxFontSize%>;
   }
@@ -101,7 +118,23 @@
     -webkit-animation-timing-function: step-start;
     animation-timing-function: step-start;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y:scroll;
   }
+
+  .select-box__list::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  .select-box__list::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  .select-box__list::-webkit-scrollbar-thumb {
+    background-color: rgb(215, 215, 215);
+    border-radius: 20px;
+  }
+
 
   .select-box__option {
     display: block;

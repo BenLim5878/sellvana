@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login - E-commerce Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<header>
-    <h1>Shopping Cart</h1>
-</header>
-<section>
-    <h2>Items in Cart</h2>
-    <ul>
-        <li>
-            <img src="item1.jpg" alt="Item 1">
-            <h3>Item 1</h3>
-            <p>Price: $10.00</p>
-            <button>Remove Item</button>
-        </li>
-        <li>
-            <img src="item2.jpg" alt="Item 2">
-            <h3>Item 2</h3>
-            <p>Price: $15.00</p>
-            <button>Remove Item</button>
-        </li>
-        <li>
-            <img src="item3.jpg" alt="Item 3">
-            <h3>Item 3</h3>
-            <p>Price: $20.00</p>
-            <button>Remove Item</button>
-        </li>
-    </ul>
-    <div>
-        <h2>Order Summary</h2>
-        <p>Subtotal: $45.00</p>
-        <p>Tax: $4.50</p>
-        <p>Total: $49.50</p>
-        <button>Checkout</button>
-    </div>
-</section>
-<footer>
-    <p>&copy; 2021 Shopping Cart</p>
-</footer>
+<div class="container">
+    <form>
+        <h1>Login</h1>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </form>
+</div>
 </body>
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        background-color: #ffffff;
+        border: 1px solid #c2c2c2;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-top: 100px;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
 </html>

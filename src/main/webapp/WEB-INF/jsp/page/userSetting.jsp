@@ -135,7 +135,6 @@
     font-weight: 500;
     font-size: 18.3801px;
     color: #363636;
-    margin: 13px 0px 16px;
   }
 
   .setting-user-profile-description-container-sellvana .label-email{
@@ -144,6 +143,7 @@
     font-weight: 400;
     font-size: 18.3801px;
     color: #676767;
+    margin: 5px 0px 12px;
   }
 
   .setting-user-profile-description-container-sellvana .label-fullName{

@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/app/css/productDetail.css">
+    <script src="/app/js/utility.js"></script>
 </head>
 <body>
     <jsp:include page="/WEB-INF/jsp/component/userTopNavBar.jsp">
@@ -51,6 +52,10 @@
                     <div class="product-detail-input-sellvana">
                         <label for="product-type">Select Product Type:</label>
                         <jsp:include page="/WEB-INF/jsp/component/selectBox.jsp">
+                            <jsp:param name="option" value="Blue"/>
+                            <jsp:param name="option" value="Red"/>
+                            <jsp:param name="option" value="Yellow"/>
+                            <jsp:param name="defaultOption" value="1"/>
                             <jsp:param name="selectBoxFontSize" value="16px"/>
                         </jsp:include>
                     </div>
@@ -213,8 +218,8 @@
     function calTotalPrice(){
         var quantity = $('#product-quantity').val();
         var priceWithCurrency = $("#product-price-tag").html();
-        var price = parseFloat(priceWithCurrency.replace(/[^0-9.-]+/g,""));
-        $("#product-subtotal-price").html('RM '+(price * quantity).toFixed(2) + ' (ex. delivery fee)');
+        var price = parsePriceLabel(priceWithCurrency)
+        $("#product-subtotal-price").html('RM '+formatDecimals(price * quantity) + ' (ex. delivery fee)');
     }
 
     $(document).ready(()=>{

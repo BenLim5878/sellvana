@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/app/js/utility.js"></script>
     <style>
         .complete-register-wrapper-sellvana svg{
             animation: progressBarIncrement 4s ease-out;
@@ -328,7 +329,6 @@
             flex: 1;
             position: relative;
             width: 100%;
-            max-width: auto;
         }
 
         .slick-dots li.slick-active {
@@ -506,7 +506,7 @@
         .image-register-sellvana{
             background-image: url(<%
             out.println(context.getContextPath()+"/img/ecommerce-checkout-laptop-bro.png");
-        %>);
+            %>);
             width: 50%;
             margin-left: 70px;
             height:90%;
@@ -585,6 +585,7 @@
             width: 536px;
             display: flex;
             flex-direction: column;
+            gap: 20px;
         }
 
         .message-register-sellvana{
@@ -641,7 +642,7 @@
             </button>
             <div id="register-content-1" class="input-register-box-sellvana">
                 <div class="input-row-box-sellvana">
-                    <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                    <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                         <jsp:param name="title" value="First Name"/>
                         <jsp:param name="inputType" value="text"/>
                         <jsp:param name="inputName" value="firstNameSellvana"/>
@@ -650,7 +651,7 @@
                         <jsp:param name="inputFontSize" value="19px"/>
                         <jsp:param name="inputErrorMessage" value="Please input valid first name"/>
                     </jsp:include>
-                    <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                    <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                         <jsp:param name="title" value="Last Name"/>
                         <jsp:param name="inputType" value="text"/>
                         <jsp:param name="inputName" value="lastNameSellvana"/>
@@ -660,7 +661,7 @@
                         <jsp:param name="inputErrorMessage" value="Please input valid last name"/>
                     </jsp:include>
                 </div>
-                <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Email Address"/>
                     <jsp:param name="inputType" value="text"/>
                     <jsp:param name="inputName" value="emailAddressSellvana"/>
@@ -669,7 +670,7 @@
                     <jsp:param name="inputFontSize" value="19px"/>
                     <jsp:param name="inputErrorMessage" value="Please input valid email address"/>
                 </jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Telephone Number"/>
                     <jsp:param name="inputType" value="tel"/>
                     <jsp:param name="inputName" value="telephoneNumberSellvana"/>
@@ -678,7 +679,7 @@
                     <jsp:param name="inputFontSize" value="19px"/>
                     <jsp:param name="inputErrorMessage" value="Please input valid telephone number"/>
                 </jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Date Of Birth"/>
                     <jsp:param name="inputType" value="date"/>
                     <jsp:param name="inputName" value="dateOfBirthSellvana"/>
@@ -706,7 +707,7 @@
                 </div>
             </div>
             <div id="register-content-3" class="input-register-box-sellvana">
-                <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Password"/>
                     <jsp:param name="inputType" value="password"/>
                     <jsp:param name="inputName" value="password"/>
@@ -714,7 +715,7 @@
                     <jsp:param name="inputHeight" value="50px"/>
                     <jsp:param name="inputFontSize" value="19px"/>
                 </jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/registerInputField.jsp">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
                     <jsp:param name="title" value="Confirm Password"/>
                     <jsp:param name="inputType" value="password"/>
                     <jsp:param name="inputName" value="confirmPassword"/>
@@ -785,12 +786,12 @@
 </div>
 <script>
     $(document).ready(()=>{
-        $('.register-input-sellvana').attr('autocomplete','nope');
+        $('.input-sellvana').attr('autocomplete','nope');
     })
 
     $('#firstNameSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkFirstName()
+        var result = checkName('#firstNameSellvana')
         if (result){
             $('#firstNameSellvana').removeClass('error')
             $('#tooltip-firstNameSellvana').removeClass('tooltip-show')
@@ -801,7 +802,7 @@
     })
     $('#lastNameSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkLastName()
+        var result = checkName('#lastNameSellvana')
         if (result){
             $('#lastNameSellvana').removeClass('error')
             $('#tooltip-lastNameSellvana').removeClass('tooltip-show')
@@ -812,7 +813,7 @@
     })
     $('#emailAddressSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkEmailAddress()
+        var result = checkEmailAddress('#emailAddressSellvana')
         if (result){
             $('#emailAddressSellvana').removeClass('error')
             $('#tooltip-emailAddressSellvana').removeClass('tooltip-show')
@@ -829,8 +830,9 @@
             phoneArr.splice(3, 0, '-');
         }
         $('#telephoneNumberSellvana').val(phoneArr.join(''));
+
         checkFormContent();
-        var result = checkTelephoneNumber()
+        var result = checkTelephoneNumber('#telephoneNumberSellvana')
         if (result){
             $('#telephoneNumberSellvana').removeClass('error')
             $('#tooltip-telephoneNumberSellvana').removeClass('tooltip-show')
@@ -841,7 +843,7 @@
     })
     $('#dateOfBirthSellvana').on('input',()=>{
         checkFormContent()
-        var result = checkDateOfBirth()
+        var result = checkDateOfBirth('#dateOfBirthSellvana')
         if (result){
             $('#dateOfBirthSellvana').removeClass('error')
             $('#tooltip-dateOfBirthSellvana').removeClass('tooltip-show')
@@ -851,64 +853,8 @@
         }
     })
 
-    function checkFirstName(){
-        var firstNameSellvana = $('#firstNameSellvana').val();
-        if (firstNameSellvana.trim() === '') {
-            return false;
-        }
-        const invalidCharactersRegex = /[^a-zA-Z\s-']/;
-        if (invalidCharactersRegex.test(firstNameSellvana)) {
-            return false;
-        }
-        return true;
-    }
-
-    function checkLastName(){
-        var lastNameSellvana = $('#lastNameSellvana').val();
-        if (lastNameSellvana.trim() === '') {
-            return false;
-        }
-        const invalidCharactersRegex = /[^a-zA-Z\s-']/;
-        if (invalidCharactersRegex.test(lastNameSellvana)) {
-            return false;
-        }
-        return true;
-    }
-
-    function checkEmailAddress(){
-        var emailAddressSellvana = $('#emailAddressSellvana').val();
-        var result = false;
-        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddressSellvana)){
-            result = true;
-        }
-        return result
-    }
-
-    function checkTelephoneNumber(){
-        var telephoneNumberSellvana = $('#telephoneNumberSellvana').val();
-        var result = false;
-        const phoneRegex = /^(011|012|013|014|015|016|017|018|019)\d{7,8}$/
-        const strippedPhoneNumber = telephoneNumberSellvana.replace(/\D/g, '');
-        if (phoneRegex.test(strippedPhoneNumber)){
-            result = true;
-        }
-        return result
-    }
-
-    function checkDateOfBirth(){
-        var dateOfBirthSellvana = $('#dateOfBirthSellvana').val();
-        var dateObject = new Date(dateOfBirthSellvana);
-
-        if (isNaN(dateObject.getTime()) || dateObject.getFullYear() < 1900 || dateObject.getFullYear() > new Date().getFullYear()) {
-            return false;
-        }
-
-        const today = new Date();
-        return dateObject <= today;
-    }
-
     function checkFormContent(){
-        if (checkFirstName() && checkLastName() && checkEmailAddress() && checkTelephoneNumber() && checkDateOfBirth()){
+        if (checkName('#firstNameSellvana') && checkName('#lastNameSellvana') && checkEmailAddress('#emailAddressSellvana') && checkTelephoneNumber('#telephoneNumberSellvana') && checkDateOfBirth('#dateOfBirthSellvana')){
             $('.button-register-sellvana').prop('disabled',false)
         }else {
             $('.button-register-sellvana').prop('disabled',true)
