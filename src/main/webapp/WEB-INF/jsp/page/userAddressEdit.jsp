@@ -19,7 +19,7 @@
   </jsp:include>
   <div class="addressEdit-main-content-sellvana">
     <div class="breadcrumb-sellvana">
-      <jsp:include page="/WEB-INF/jsp/component/breadcrumb.jsp">
+      <jsp:include page="/WEB-INF/jsp/component/userBreadcrumb.jsp">
         <jsp:param name="crumb" value="Home"/>
         <jsp:param name="link" value="/app"/>
         <jsp:param name="crumb" value="My Address"/>
@@ -167,7 +167,7 @@
     border: 1.13px solid <%=appAccent%> !important;
   }
 
-  .address-state-select-box-input-container-sellvana:focus{
+  .product-category-select-box-input-container-sellvana:focus{
     border: 1.13px solid <%=appAccent%> !important;
   }
 

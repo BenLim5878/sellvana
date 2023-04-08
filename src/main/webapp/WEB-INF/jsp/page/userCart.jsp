@@ -17,7 +17,7 @@
   <jsp:include page="/WEB-INF/jsp/component/userSideNavBar.jsp"></jsp:include>
   <div class="cart-main-content-sellvana">
     <div class="breadcrumb-sellvana">
-      <jsp:include page="/WEB-INF/jsp/component/breadcrumb.jsp">
+      <jsp:include page="/WEB-INF/jsp/component/userBreadcrumb.jsp">
         <jsp:param name="crumb" value="Home"/>
         <jsp:param name="link" value="/app"/>
         <jsp:param name="crumb" value="Cart"/>

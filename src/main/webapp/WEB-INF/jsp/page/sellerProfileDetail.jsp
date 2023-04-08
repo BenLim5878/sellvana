@@ -2,33 +2,26 @@
 <%
     String appAccent = application.getInitParameter("appAccent");
     String appAccentHover = application.getInitParameter("appAccentHover");
+    String appAccentLight = application.getInitParameter("appAccentLight");
 %>
 <html>
 <head>
-    <title>Profile Detail</title>
-    <script src="https://kit.fontawesome.com/b26d39faa3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Order</title>
     <script src="/app/js/utility.js"></script>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/jsp/component/userTopNavBar.jsp">
-        <jsp:param name="hasInitialShadow" value="true"/>
-    </jsp:include>
-    <jsp:include page="/WEB-INF/jsp/component/userSideNavBar.jsp">
+    <jsp:include page="/WEB-INF/jsp/component/sellerNavBar.jsp">
         <jsp:param name="menuLocation" value="setting"/>
     </jsp:include>
-    <div class="setting-profile-main-content-sellvana">
+    <div class="profileDetail-main-content-sellvana">
         <div class="breadcrumb-sellvana">
-            <jsp:include page="/WEB-INF/jsp/component/userBreadcrumb.jsp">
-                <jsp:param name="crumb" value="Home"/>
-                <jsp:param name="link" value="/app"/>
+            <jsp:include page="/WEB-INF/jsp/component/sellerBreadcrumb.jsp">
                 <jsp:param name="crumb" value="Setting"/>
-                <jsp:param name="link" value="/app/setting"/>
+                <jsp:param name="link" value="/app/seller/setting"/>
                 <jsp:param name="crumb" value="Profile"/>
             </jsp:include>
         </div>
-        <h2 class="setting-profile-title-sellvana">My Profile</h2>
+        <h1 class="profileDetail-page-title-sellvana">My Profile</h1>
         <section class="setting-profile-main-section-sellvana">
             <div class="setting-profile-left-content-sellvana">
                 <div class="setting-profile-image-container-sellvana">
@@ -46,9 +39,19 @@
                 </div>
             </div>
             <div class="setting-profile-right-content-sellvana">
+                <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
+                    <jsp:param name="title" value="Company Name"/>
+                    <jsp:param name="inputType" value="text"/>
+                    <jsp:param name="inputName" value="companyNameSellvana"/>
+                    <jsp:param name="inputWidth" value="100%"/>
+                    <jsp:param name="inputValue" value="Shopify"/>
+                    <jsp:param name="inputHeight" value="56px"/>
+                    <jsp:param name="inputFontSize" value="19px"/>
+                    <jsp:param name="inputErrorMessage" value="Please input valid company name"/>
+                </jsp:include>
                 <div class="input-row-box-sellvana">
                     <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
-                        <jsp:param name="title" value="First Name"/>
+                        <jsp:param name="title" value="Contact First Name"/>
                         <jsp:param name="inputType" value="text"/>
                         <jsp:param name="inputName" value="firstNameSellvana"/>
                         <jsp:param name="inputWidth" value="320px"/>
@@ -58,7 +61,7 @@
                         <jsp:param name="inputErrorMessage" value="Please input valid first name"/>
                     </jsp:include>
                     <jsp:include page="/WEB-INF/jsp/component/inputField.jsp">
-                        <jsp:param name="title" value="Last Name"/>
+                        <jsp:param name="title" value="Contact Last Name"/>
                         <jsp:param name="inputType" value="text"/>
                         <jsp:param name="inputName" value="lastNameSellvana"/>
                         <jsp:param name="inputWidth" value="320px"/>
@@ -216,6 +219,18 @@
     $(document).ready(()=>{
         $('.input-sellvana').attr('autocomplete','nope');
 
+        $('#companyNameSellvana').on('input',()=>{
+            checkFormContent()
+            var result = checkName('#companyNameSellvana')
+            if (result){
+                $('#companyNameSellvana').removeClass('error')
+                $('#tooltip-companyNameSellvana').removeClass('tooltip-show')
+            }else {
+                $('#companyNameSellvana').addClass('error')
+                $('#tooltip-companyNameSellvana').addClass('tooltip-show')
+            }
+        })
+
         $('#firstNameSellvana').on('input',()=>{
             checkFormContent()
             var result = checkName('#firstNameSellvana')
@@ -262,7 +277,7 @@
         })
 
         function checkFormContent(){
-            if (checkName('#firstNameSellvana') && checkName('#lastNameSellvana') && checkEmailAddress('#emailAddressSellvana') && checkTelephoneNumber('#telephoneNumberSellvana')){
+            if (checkName('#companyNameSellvana') && checkName('#firstNameSellvana') && checkName('#lastNameSellvana') && checkEmailAddress('#emailAddressSellvana') && checkTelephoneNumber('#telephoneNumberSellvana')){
                 $('.edit-account-button').prop('disabled',false)
             }else {
                 $('.edit-account-button').prop('disabled',true)
@@ -271,6 +286,28 @@
 
     })
 </script>
+<style>
+    .profileDetail-page-title-sellvana{
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        color: #333333;
+        margin-top: 30px;
+    }
+
+    .profileDetail-main-content-sellvana{
+        padding-left: 70px;
+        padding-top: 40px;
+        margin-left: 78px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body{
+        background-color: #f8f8f8;
+    }
+</style>
 <style>
     .edit-account-button:disabled{
         background-color: grey !important;
@@ -488,6 +525,7 @@
         flex-direction: row;
         align-items: flex-start;
         gap: 150px;
+        margin-top: 100px;
     }
 
     .setting-profile-left-content-sellvana{
@@ -527,24 +565,6 @@
         object-fit: cover;
         border-radius: 50%;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-
-    .setting-profile-title-sellvana{
-        font-family:Inter;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        color: #262626;
-        padding: 30px 0px;
-    }
-
-    .breadcrumb-sellvana{
-        padding-top:90px;
-    }
-
-    .setting-profile-main-content-sellvana{
-        width: 1200px;
-        margin: 0 auto;
     }
 </style>
 </html>

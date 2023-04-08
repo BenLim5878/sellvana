@@ -21,14 +21,14 @@
         <div class="product-list-container-sellvana">
             <h2 class="product-list-title-sellvana">By iBeli Online (23 Products)</h2>
             <div class="product-list-content-container-sellvana">
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
             </div>
         </div>
         <div class="seller-detail-container-sellvana">

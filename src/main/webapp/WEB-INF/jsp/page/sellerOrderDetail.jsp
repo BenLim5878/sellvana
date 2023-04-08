@@ -2,39 +2,36 @@
 <%
     String appAccent = application.getInitParameter("appAccent");
     String appAccentHover = application.getInitParameter("appAccentHover");
+    String appAccentLight = application.getInitParameter("appAccentLight");
+%>
+<%
+    String orderID = request.getParameter("orderID");
+    String orderStatus = request.getParameter("orderStatus");
 %>
 <html>
 <head>
-    <title>Order Detail</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/b26d39faa3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Order</title>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/jsp/component/userTopNavBar.jsp">
-        <jsp:param name="hasInitialShadow" value="true"/>
-    </jsp:include>
-    <jsp:include page="/WEB-INF/jsp/component/userSideNavBar.jsp">
+    <jsp:include page="/WEB-INF/jsp/component/sellerNavBar.jsp">
         <jsp:param name="menuLocation" value="order"/>
     </jsp:include>
-    <div class="order-main-content-sellvana">
+    <div class="orderDetail-main-content-sellvana">
         <div class="breadcrumb-sellvana">
-            <jsp:include page="/WEB-INF/jsp/component/userBreadcrumb.jsp">
-                <jsp:param name="crumb" value="Home"/>
-                <jsp:param name="link" value="/app"/>
+            <jsp:include page="/WEB-INF/jsp/component/sellerBreadcrumb.jsp">
                 <jsp:param name="crumb" value="Order"/>
-                <jsp:param name="link" value="/app/order"/>
+                <jsp:param name="link" value="/app/seller/order"/>
                 <jsp:param name="crumb" value="Detail"/>
             </jsp:include>
         </div>
         <div class="order-main-content-header-sellvana">
             <div class="order-id-wrapper-sellvana">
                 <i class="fa-solid fa-box"></i>
-                <h2>Order #230315GPHMPGU1</h2>
+                <h2>Order #<%=orderID%></h2>
             </div>
             <div class="order-status-wrapper-sellvana">
                 <i class="fa-solid fa-circle-question"></i>
-                <h4>Confirmed</h4>
+                <h4><%=orderStatus%></h4>
             </div>
         </div>
         <div class="order-content-wrapper-sellvana">
@@ -96,8 +93,7 @@
                     </div>
                 </div>
                 <div class="order-list-footer-button-container-sellvana">
-                    <button class="order-list-footer-button-sellvana">Write a review</button>
-                    <button class="order-list-footer-button-sellvana" id="cancel-order-button">Cancel Order</button>
+                    <button class="order-list-footer-button-sellvana">Approve</button>
                 </div>
             </div>
         </div>
@@ -108,18 +104,6 @@
                 </div>
                 <div class="order-header-seperator-sellvana"></div>
                 <div class="order-payment-sellvana">
-                    <div class="order-payment-list-sellvana">
-                        <h5 class="order-payment-list-label-sellvana">Payment method: </h5>
-                        <div class="order-payment-description-sellvana">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -9 58 58" fill="none">
-                                <rect x="0.5" y="0.5" width="57" height="39" rx="3.5" fill="white" stroke="#F3F3F3"/>
-                                <path d="M34.3102 28.9765H23.9591V10.5122H34.3102V28.9765Z" fill="#FF5F00"/>
-                                <path d="M24.6223 19.7429C24.6223 15.9973 26.3891 12.6608 29.1406 10.5107C27.1285 8.93843 24.5892 7.99998 21.8294 7.99998C15.2961 7.99998 10 13.2574 10 19.7429C10 26.2283 15.2961 31.4857 21.8294 31.4857C24.5892 31.4857 27.1285 30.5473 29.1406 28.975C26.3891 26.8249 24.6223 23.4884 24.6223 19.7429" fill="#EB001B"/>
-                                <path d="M48.2706 19.7429C48.2706 26.2283 42.9745 31.4857 36.4412 31.4857C33.6814 31.4857 31.1421 30.5473 29.1293 28.975C31.8815 26.8249 33.6483 23.4884 33.6483 19.7429C33.6483 15.9973 31.8815 12.6608 29.1293 10.5107C31.1421 8.93843 33.6814 7.99998 36.4412 7.99998C42.9745 7.99998 48.2706 13.2574 48.2706 19.7429" fill="#F79E1B"/>
-                            </svg>
-                            <h5>**** **** **** 3947</h5>
-                        </div>
-                    </div>
                     <div class="order-payment-list-sellvana">
                         <h5 class="order-payment-list-label-sellvana">Status: </h5>
                         <div class="order-payment-description-sellvana">
@@ -185,17 +169,33 @@
     </div>
 </body>
 <script>
-    $('#order-delivery-address-sellvana').click(()=>{
-        window.open('https://maps.google.com/?q='+"3 Newbridge Court ,Chino Hills,CA 91709, United States");
-    })
+    var orderStatus = "<%=orderStatus%>"
 
-
+    switch (orderStatus){
+        case "Pending":
+            $('.order-list-footer-button-sellvana').css('display','block')
+            break;
+        default:
+            $('.order-list-footer-button-sellvana').css('display','none')
+            break;
+    }
 </script>
 <style>
-    .breadcrumb-sellvana{
-        padding-top: 30px;
+    .orderDetail-main-content-sellvana{
+        padding-left: 70px;
+        padding-top: 40px;
+        margin-left: 78px;
+        display: flex;
+        flex-direction: column;
+        width: 1200px;
+        padding-bottom: 100px;
     }
 
+    body{
+        background-color: #f8f8f8;
+    }
+</style>
+<style>
     .order-status-wrapper-sellvana h4{
         font-family:Inter;
         font-style: normal;
@@ -439,6 +439,7 @@
     }
 
     .order-list-content-container-sellvana .order-list-product-sellvana:not(:last-child){
+        padding-bottom: 20px;
         border-bottom: 1px solid #e1e1e1;
     }
 

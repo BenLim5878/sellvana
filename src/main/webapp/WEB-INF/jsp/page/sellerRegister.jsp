@@ -33,7 +33,7 @@
             color: #4A5568;
         }
 
-        .address-state-selectBox{
+        .product-category-selectBox{
             width: 350px;
             height: 90px;
             display: flex;
@@ -1149,7 +1149,7 @@
                     $('.button-register-sellvana').html("Continue")
                 }
                 //
-                $('.description-register-sellvana').html("Upload profile picture")
+                $('.description-register-sellvana').html("Upload shop picture")
                 break;
             case 4:
                 $('.back-button-register-sellvana').css('display','block')

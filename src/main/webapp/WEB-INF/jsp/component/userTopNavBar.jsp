@@ -227,6 +227,9 @@
         padding: 10px 0px;
         z-index: 9999;
         transition: all 0.1s ease-in;
+        backdrop-filter: blur(8.2px);
+        -webkit-backdrop-filter: blur(8.2px);
+        background: rgba(255,255,255,0.6);
     }
 
     .shadow{

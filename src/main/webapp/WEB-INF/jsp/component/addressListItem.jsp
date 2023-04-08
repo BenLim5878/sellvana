@@ -71,10 +71,12 @@
   }
 
   function refreshListStyle(element,isSelected){
-    if (isSelected){
-      element.addClass('address-selected')
-    } else {
-      element.removeClass('address-selected')
+    if (<%=isAddressSelection%>){
+      if (isSelected){
+        element.addClass('address-selected')
+      } else {
+        element.removeClass('address-selected')
+      }
     }
   }
 </script>

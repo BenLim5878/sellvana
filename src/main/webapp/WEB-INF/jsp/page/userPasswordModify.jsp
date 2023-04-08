@@ -21,7 +21,7 @@
   <div class="password-modify-main-content-sellvana">
     <jsp:include page="/WEB-INF/jsp/component/snackbarList.jsp"></jsp:include>
     <div class="breadcrumb-sellvana">
-      <jsp:include page="/WEB-INF/jsp/component/breadcrumb.jsp">
+      <jsp:include page="/WEB-INF/jsp/component/userBreadcrumb.jsp">
         <jsp:param name="crumb" value="Home"/>
         <jsp:param name="link" value="/app"/>
         <jsp:param name="crumb" value="Setting"/>

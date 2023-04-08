@@ -494,14 +494,14 @@
                 </div>
             </div>
             <div class="main-content-product-list-content-container-sellvana">
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
-                <jsp:include page="/WEB-INF/jsp/component/productCard.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/jsp/component/productCardUser.jsp"></jsp:include>
             </div>
         </div>
     </div>
